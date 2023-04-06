@@ -1,0 +1,2458 @@
+D:/微信开发者工具 云开发 基础模版 资源配置
+D:/微信开发者工具 云开发 基础模版 资源配置\.eslintrc.js
+/*
+ * Eslint config file
+ * Documentation: https://eslint.org/docs/user-guide/configuring/
+ * Install the Eslint extension before using this feature.
+ */
+module.exports = {
+  env: {
+    es6: true,
+    browser: true,
+    node: true,
+  },
+  ecmaFeatures: {
+    modules: true,
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  globals: {
+    wx: true,
+    App: true,
+    Page: true,
+    getCurrentPages: true,
+    getApp: true,
+    Component: true,
+    requirePlugin: true,
+    requireMiniProgram: true,
+  },
+  // extends: 'eslint:recommended',
+  rules: {},
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\project.config.json
+{
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false,
+    "minifyWXML": true,
+    "condition": false
+  },
+  "appid": "wxd0bea507afa29d0a",
+  "projectname": "quickstart-wx-cloud",
+  "libVersion": "2.14.1",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide"
+        }
+      ]
+    }
+  },
+  "srcMiniprogramRoot": "miniprogram/",
+  "compileType": "miniprogram",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\project.private.config.json
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "pages/getOpenId/index",
+          "pathName": "pages/getOpenId/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/deployService/index",
+          "pathName": "pages/deployService/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/selectRecord/index",
+          "pathName": "pages/selectRecord/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/sumRecordResult/index",
+          "pathName": "pages/sumRecordResult/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/updateRecord/index",
+          "pathName": "pages/updateRecord/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/updateRecordResult/index",
+          "pathName": "pages/updateRecordResult/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/updateRecordSuccess/index",
+          "pathName": "pages/updateRecordSuccess/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "%E5%BA%B7%E6%82%A6%E4%B9%8B%E6%97%85"
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\README.md
+# 云开发 quickstart
+
+这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
+
+- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
+- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
+- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
+
+## 参考文档
+
+- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\uploadCloudFunction.bat
+"D:\΢�ſ����߹���\΢��web�����߹���\cli.bat" cloud functions deploy --e cloud1-9geb9jfy6f5d21cb --n quickstartFunctions --r --project "D:\΢�ſ����߹��� �ƿ��� ����ģ�� ��Դ����" --report_first --report
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\config.json
+{
+  "permissions": {
+    "openapi": [
+      "wxacode.get"
+    ]
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\index.js
+const getOpenId = require('./getOpenId/index');
+const getMiniProgramCode = require('./getMiniProgramCode/index');
+const createCollection = require('./createCollection/index');
+const selectRecord = require('./selectRecord/index');
+const updateRecord = require('./updateRecord/index');
+const sumRecord = require('./sumRecord/index');
+
+
+// 云函数入口函数
+exports.main = async (event, context) => {
+  switch (event.type) {
+    case 'getOpenId':
+      return await getOpenId.main(event, context);
+    case 'getMiniProgramCode':
+      return await getMiniProgramCode.main(event, context);
+    case 'createCollection':
+      return await createCollection.main(event, context);
+    case 'selectRecord':
+      return await selectRecord.main(event, context);
+    case 'updateRecord':
+      return await updateRecord.main(event, context);
+    case 'sumRecord':
+      return await sumRecord.main(event, context);
+  }
+};
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\package.json
+{
+  "name": "quickstartFunctions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "~2.4.0"
+  }
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\createCollection
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\createCollection\index.js
+const cloud = require('wx-server-sdk');
+
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+});
+
+const db = cloud.database();
+
+// 创建集合云函数入口函数
+exports.main = async (event, context) => {
+  try {
+    // 创建集合
+    await db.createCollection('sales');
+    await db.collection('sales').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        region: '华东',
+        city: '上海',
+        sales: 11
+      }
+    });
+    await db.collection('sales').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        region: '华东',
+        city: '南京',
+        sales: 11
+      }
+    });
+    await db.collection('sales').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        region: '华南',
+        city: '广州',
+        sales: 22
+      }
+    });
+    await db.collection('sales').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        region: '华南',
+        city: '深圳',
+        sales: 22
+      }
+    });
+    return {
+      success: true
+    };
+  } catch (e) {
+    // 这里catch到的是该collection已经存在，从业务逻辑上来说是运行成功的，所以catch返回success给前端，避免工具在前端抛出异常
+    return {
+      success: true,
+      data: 'create collection success'
+    };
+  }
+};
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\getMiniProgramCode
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\getMiniProgramCode\index.js
+const cloud = require('wx-server-sdk');
+
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+});
+
+// 获取小程序二维码云函数入口函数
+exports.main = async (event, context) => {
+  // 获取小程序二维码的buffer
+  const resp = await cloud.openapi.wxacode.get({
+    path: 'pages/index/index'
+  });
+  const { buffer } = resp;
+  // 将图片上传云存储空间
+  const upload = await cloud.uploadFile({
+    cloudPath: 'code.png',
+    fileContent: buffer
+  });
+  return upload.fileID;
+};
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\getOpenId
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\getOpenId\index.js
+const cloud = require('wx-server-sdk');
+
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+});
+
+// 获取openId云函数入口函数
+exports.main = async (event, context) => {
+  // 获取基础信息
+  const wxContext = cloud.getWXContext();
+
+  return {
+    openid: wxContext.OPENID,
+    appid: wxContext.APPID,
+    unionid: wxContext.UNIONID,
+  };
+};
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\selectRecord
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\selectRecord\index.js
+const cloud = require('wx-server-sdk');
+
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+});
+const db = cloud.database();
+
+// 查询数据库集合云函数入口函数
+exports.main = async (event, context) => {
+  // 返回数据库查询结果
+  return await db.collection('sales').get();
+};
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\sumRecord
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\sumRecord\index.js
+const cloud = require('wx-server-sdk');
+
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+});
+const db = cloud.database();
+const $ = db.command.aggregate;
+
+// 聚合记录云函数入口函数
+exports.main = async (event, context) => {
+  // 返回数据库聚合结果
+  return db.collection('sales').aggregate()
+    .group({
+      _id: '$region',
+      sum: $.sum('$sales')
+    })
+    .end();
+};
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\updateRecord
+D:/微信开发者工具 云开发 基础模版 资源配置\cloudfunctions\quickstartFunctions\updateRecord\index.js
+const cloud = require('wx-server-sdk');
+
+cloud.init({
+  env: cloud.DYNAMIC_CURRENT_ENV
+});
+const db = cloud.database();
+
+// 修改数据库信息云函数入口函数
+exports.main = async (event, context) => {
+  try {
+    // 遍历修改数据库信息
+    for (let i = 0; i < event.data.length; i++) {
+      await db.collection('sales').where({
+        _id: event.data[i]._id
+      })
+        .update({
+          data: {
+            sales: event.data[i].sales
+          },
+        });
+    }
+    return {
+      success: true,
+      data: event.data
+    };
+  } catch (e) {
+    return {
+      success: false,
+      errMsg: e
+    };
+  }
+};
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\app.js
+// app.js
+App({
+  onLaunch: function () {
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+    } else {
+      wx.cloud.init({
+        // env 参数说明：
+        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
+        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
+        //   如不填则使用默认环境（第一个创建的环境）
+        // env: 'my-env-id',
+        traceUser: true,
+      });
+    }
+
+    this.globalData = {};
+  }
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\app.json
+{
+  "pages": [
+    "pages/index/index",
+    "pages/getOpenId/index",
+    "pages/getMiniProgramCode/index",
+    "pages/deployService/index",
+    "pages/createCollection/index",
+    "pages/uploadFile/index",
+    "pages/selectRecord/index",
+    "pages/updateRecord/index",
+    "pages/updateRecordResult/index",
+    "pages/updateRecordSuccess/index",
+    "pages/sumRecord/index",
+    "pages/sumRecordResult/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\app.wxss
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
+
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\envList.js
+const envList = [{"envId":"cloud1-9geb9jfy6f5d21cb","alias":"cloud1"}]
+const isMac = false
+module.exports = {
+    envList,
+    isMac
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\sitemap.json
+{
+  "desc": "关于本文件的更多信息，请参考文档 https://developers.weixin.qq.com/miniprogram/dev/framework/sitemap.html",
+  "rules": [{
+    "action": "allow",
+    "page": "*"
+  }]
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\components
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\components\cloudTipModal
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\components\cloudTipModal\index.js
+// miniprogram/components/cloudTipModal/index.js
+const { isMac } = require('../../envList.js');
+
+Component({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    tipText: isMac ? 'sh ./uploadCloudFunction.sh' : './uploadCloudFunction.bat'
+  },
+  properties: {
+    showUploadTipProps: Boolean
+  },
+  observers: {
+    showUploadTipProps: function(showUploadTipProps) {
+      this.setData({
+        showUploadTip: showUploadTipProps
+      });
+    }
+  },
+  methods: {
+    onChangeShowUploadTip() {
+      this.setData({
+        showUploadTip: !this.data.showUploadTip
+      });
+    },
+
+    copyShell() {
+      wx.setClipboardData({
+        data: this.data.tipText,
+      });
+    },
+  }
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\components\cloudTipModal\index.json
+{
+  "usingComponents": {},
+  "component": true
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\components\cloudTipModal\index.wxml
+<!--miniprogram/components/cloudTipModal/index.wxml-->
+<view class="install_tip" wx:if="{{showUploadTip}}">
+  <view class="install_tip_back"></view>
+  <view class="install_tip_detail">
+    <view class="install_tip_detail_title">体验前需部署云资源</view>
+    <view class="install_tip_detail_tip">请开启调试器进入终端窗口，复制并运行以下命令</view>
+    <view class="install_tip_detail_shell">
+      {{tipText}}
+      <view bindtap="copyShell" class="install_tip_detail_copy">复制</view>
+    </view>
+    <view bindtap="onChangeShowUploadTip" class="install_tip_detail_button">已执行命令</view>
+  </view>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\components\cloudTipModal\index.wxss
+.install_tip_back {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.install_tip_detail {
+  position: fixed;
+  background-color: white;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 60%;
+  border-radius: 40rpx 40rpx 0 0;
+  padding: 50rpx;
+  z-index: 9;
+}
+
+.install_tip_detail_title {
+  font-weight: 400;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.install_tip_detail_tip {
+  font-size: 25rpx;
+  color: rgba(0,0,0,0.4);
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.install_tip_detail_shell {
+  margin: 70rpx 0;
+  display: flex;
+  justify-content: center;
+}
+
+.install_tip_detail_copy {
+  color: #546488;
+  margin-left: 10rpx;
+}
+
+.install_tip_detail_button {
+  color: #07C160;
+  font-weight: 500;
+  background-color: rgba(0,0,0,0.1);
+  width: 60%;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\images
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\images\arrow.svg
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>☀ iOS/☀ 图标/线型/icons_outlined_arrow@3x</title>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.3">
+        <g id="4.列表/z.覆盖层/右边/箭头" transform="translate(-334.000000, -21.000000)" fill="#000000">
+            <g id="☀-iOS/☀-图标/线型/icons_outlined_arrow" transform="translate(332.000000, 16.000000)">
+                <path d="M2.45405845,6.58064919 L3.51471863,5.51998901 L9.29361566,11.298886 C9.68374096,11.6890113 9.6872014,12.318069 9.29361566,12.7116547 L3.51471863,18.4905518 L2.45405845,17.4298916 L7.87867966,12.0052704 L2.45405845,6.58064919 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\images\database.png
+无法读取文件内容（非文本文件）
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\images\deploy_step1.png
+无法读取文件内容（非文本文件）
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\images\deploy_step2.png
+无法读取文件内容（非文本文件）
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\createCollection
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\createCollection\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\createCollection\index.json
+{
+  "usingComponents": {}
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\createCollection\index.wxml
+<view class="page">
+  <view class="title">功能介绍</view>
+  <view class="info">集合为常用数据库中表的概念。云开发数据库支持自动备份、无损回档，并且QPS高达3千+。</view>
+  <view class="title">如何体验</view>
+  <view class="info">已自动创建名为“sales”的体验合集，可打开“云开发控制台>数据库>记录列表”中找到该集合。</view>
+  <image class="img" src="../../images/database.png"></image>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\createCollection\index.wxss
+page {
+  background-color: white;
+  padding-bottom: 50px;
+}
+
+.page {
+  padding: 0 32px;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: 17px;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+}
+
+.info {
+  margin-top: 12px;
+  font-size: 17px;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000000;
+}
+
+.img {
+  margin-top: 16px;
+  width: 100%;
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\deployService
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\deployService\index.js
+// miniprogram/pages/deployService/index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\deployService\index.json
+{
+  "usingComponents": {}
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\deployService\index.wxml
+<!--miniprogram/pages/deployService/index.wxml-->
+<view class="page">
+  <view class="title">功能介绍</view>
+  <view class="info">云托管是全托管的容器服务，支持任何语言及框架运行，只需将已有业务代码打包上传，即可快速迁移。</view>
+  <view class="title">如何体验</view>
+  <view class="info">步骤一：切换按量付费，打开“云开发控制台>设置>环境设置”找到按量付费，点击切换。</view>
+  <image class="img" src="../../images/deploy_step1.png"></image>
+  <view class="info">步骤二：开通云托管，体验相关能力</view>
+  <image class="img" src="../../images/deploy_step2.png"></image>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\deployService\index.wxss
+/* miniprogram/pages/deployService/index.wxss */
+page {
+  background-color: white;
+  padding-bottom: 50px;
+}
+
+.page {
+  padding: 0 32px;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: 17px;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+}
+
+.info {
+  margin-top: 12px;
+  font-size: 17px;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000000;
+}
+
+.img {
+  margin-top: 16px;
+  width: 100%;
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getMiniProgramCode
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getMiniProgramCode\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetCodeSrc: false,
+    envId: '',
+    codeSrc: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+  },
+
+  getCodeSrc() {
+    wx.showLoading({
+      title: '',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'getMiniProgramCode'
+      }
+    }).then((resp) => {
+      this.setData({
+        haveGetCodeSrc: true,
+        codeSrc: resp.result
+      });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
+  },
+
+  clearCodeSrc() {
+    this.setData({
+      haveGetCodeSrc: false,
+      codeSrc: ''
+    });
+  }
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getMiniProgramCode\index.json
+{
+  "navigationBarTitleText": "生成小程序码",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getMiniProgramCode\index.wxml
+<view>
+  <view class="top_tip">可通过云函数免接口调用凭证，直接生成小程序码。</view>
+  <view class="box_text" wx:if="{{!codeSrc}}">小程序码将展示在这里</view>
+  <view  wx:if="{{codeSrc}}" class="code_box">
+    <image class="code_img" src="{{codeSrc}}"></image>
+  </view>
+  <view class="button" bindtap="getCodeSrc" wx:if="{{!haveGetCodeSrc}}">生成小程序码</view>
+  <view class="button_clear" bindtap="clearCodeSrc" wx:if="{{haveGetCodeSrc}}">清空</view>
+  <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>getMiniProgramCode>index.js“找到获取小程序码函数，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getMiniProgramCode\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 17rpx 0;
+}
+
+.code_img {
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 20% auto 0 auto;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+
+.button_clear {
+  width: 300rpx;
+  text-align: center;
+  margin: 20% auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getOpenId
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getOpenId\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetOpenId: false,
+    envId: '',
+    openId: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+  },
+
+  getOpenId() {
+    wx.showLoading({
+      title: '',
+    });
+   wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'getOpenId'
+      }
+    }).then((resp) => {
+      this.setData({
+        haveGetOpenId: true,
+        openId: resp.result.openid
+      });
+     wx.hideLoading();
+   }).catch((e) => {
+      this.setData({
+        showUploadTip: true
+      });
+     wx.hideLoading();
+    });
+  },
+
+  clearOpenId() {
+    this.setData({
+      haveGetOpenId: false,
+      openId: ''
+    });
+  }
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getOpenId\index.json
+{
+  "navigationBarTitleText": "获取OpenId",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getOpenId\index.wxml
+<view>
+  <view class="top_tip">无需维护鉴权机制及登录票据，仅一行代码即可获得。</view>
+  <view class="box_text">{{ openId ? openId : 'OpenID将展示在这里' }}</view>
+  <view class="button" bindtap="getOpenId" wx:if="{{!haveGetOpenId}}">获取OpenId</view>
+  <view class="button_clear" bindtap="clearOpenId" wx:if="{{haveGetOpenId}}">清空</view>
+  <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>getOpenId>index.js“找到获取openId函数，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\getOpenId\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+
+.button_clear {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\index
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\index\index.js
+// index.js
+// const app = getApp()
+const { envList } = require('../../envList.js');
+
+Page({
+  data: {
+    showUploadTip: false,
+    powerList: [{
+      title: '云函数',
+      tip: '安全、免鉴权运行业务代码',
+      showItem: false,
+      item: [{
+        title: '获取OpenId',
+        page: 'getOpenId'
+      },
+      //  {
+      //   title: '微信支付'
+      // },
+       {
+        title: '生成小程序码',
+        page: 'getMiniProgramCode'
+      },
+      // {
+      //   title: '发送订阅消息',
+      // }
+    ]
+    }, {
+      title: '数据库',
+      tip: '安全稳定的文档型数据库',
+      showItem: false,
+      item: [{
+        title: '创建集合',
+        page: 'createCollection'
+      }, {
+        title: '更新记录',
+        page: 'updateRecord'
+      }, {
+        title: '查询记录',
+        page: 'selectRecord'
+      }, {
+        title: '聚合操作',
+        page: 'sumRecord'
+      }]
+    }, {
+      title: '云存储',
+      tip: '自带CDN加速文件存储',
+      showItem: false,
+      item: [{
+        title: '上传文件',
+        page: 'uploadFile'
+      }]
+    }, {
+      title: '云托管',
+      tip: '不限语言的全托管容器服务',
+      showItem: false,
+      item: [{
+        title: '部署服务',
+        page: 'deployService'
+      }]
+    }],
+    envList,
+    selectedEnv: envList[0],
+    haveCreateCollection: false
+  },
+
+  onClickPowerInfo(e) {
+    const index = e.currentTarget.dataset.index;
+    const powerList = this.data.powerList;
+    powerList[index].showItem = !powerList[index].showItem;
+    if (powerList[index].title === '数据库' && !this.data.haveCreateCollection) {
+      this.onClickDatabase(powerList);
+    } else {
+      this.setData({
+        powerList
+      });
+    }
+  },
+
+  onChangeShowEnvChoose() {
+    wx.showActionSheet({
+      itemList: this.data.envList.map(i => i.alias),
+      success: (res) => {
+        this.onChangeSelectedEnv(res.tapIndex);
+      },
+      fail (res) {
+        console.log(res.errMsg);
+      }
+    });
+  },
+
+  onChangeSelectedEnv(index) {
+    if (this.data.selectedEnv.envId === this.data.envList[index].envId) {
+      return;
+    }
+    const powerList = this.data.powerList;
+    powerList.forEach(i => {
+      i.showItem = false;
+    });
+    this.setData({
+      selectedEnv: this.data.envList[index],
+      powerList,
+      haveCreateCollection: false
+    });
+  },
+
+  jumpPage(e) {
+    wx.navigateTo({
+      url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
+    });
+  },
+
+  onClickDatabase(powerList) {
+    wx.showLoading({
+      title: '',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.selectedEnv.envId
+      },
+      data: {
+        type: 'createCollection'
+      }
+    }).then((resp) => {
+      if (resp.result.success) {
+        this.setData({
+          haveCreateCollection: true
+        });
+      }
+      this.setData({
+        powerList
+      });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
+  }
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\index\index.json
+{
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\index\index.wxml
+<!--index.wxml-->
+<view class="container">
+
+  <view class="title">快速了解云开发</view>
+
+  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
+
+  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
+    <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
+      <view class="power_info_text">
+        <view class="power_info_text_title">{{power.title}}</view>
+        <view class="power_info_text_tip">{{power.tip}}</view>
+      </view>
+      <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
+      <image wx:if="{{power.showItem}}" class="power_info_less" src="../../images/arrow.svg"></image>
+    </view>
+    <view wx:if="{{power.showItem}}">
+      <view wx:key="title" wx:for="{{power.item}}">
+        <view class="line"></view>
+        <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
+          <view class="power_item_title">{{item.title}}</view>
+          <image class="power_item_icon" src="../../images/arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
+
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\index\index.wxss
+/**index.wxss**/
+
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
+}
+
+.title {
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  font-size: 44rpx;
+  margin-bottom: 40rpx;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #888888;
+  margin-bottom: 28rpx;
+}
+
+.power {
+  margin-top: 30rpx;
+  border-radius: 5px;
+  background-color: white;
+  width: 93%;
+  padding-bottom: 1rpx;
+}
+
+.power_info {
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.power_info_more {
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(90deg);
+}
+
+.power_info_less {
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(270deg);
+}
+
+.power_info_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.power_info_text_title {
+  margin-bottom: 10rpx;
+  font-weight: 400;
+  font-size: 35rpx;
+}
+
+.power_info_text_tip {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 25rpx;
+}
+
+.power_item {
+  padding: 30rpx 25rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.power_item_title {
+  font-size: 30rpx;
+}
+
+.power_item_icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.line {
+  width: 95%;
+  margin: 0 auto;
+  height: 2rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.environment {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 24rpx;
+  margin-top: 25%;
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\selectRecord
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\selectRecord\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetRecord: false,
+    envId: '',
+    record: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+  },
+
+  getRecord() {
+    wx.showLoading({
+      title: '',
+    });
+   wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'selectRecord'
+      }
+    }).then((resp) => {
+      this.setData({
+        haveGetRecord: true,
+        record: resp.result.data
+      });
+     wx.hideLoading();
+   }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+     wx.hideLoading();
+   });
+  },
+
+  clearRecord() {
+    this.setData({
+      haveGetRecord: false,
+      record: ''
+    });
+  }
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\selectRecord\index.json
+{
+  "navigationBarTitleText": "查询记录",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\selectRecord\index.wxml
+<view>
+  <view class="top_tip">体验查询记录能力，查询数据表中的销量数据。</view>
+  <view class="box_text" wx:if="{{!record}}">销量数据将展示在这里</view>
+  <view  wx:if="{{record}}" class="code_box">
+    <view class="code_box_title">地区销量统计</view>
+    <view class="code_box_record">
+      <view class="code_box_record_title">地域</view>
+      <view class="code_box_record_title">城市</view>
+      <view class="code_box_record_title">销量</view>
+    </view>
+    <view class="line"></view>
+    <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
+      <view class="code_box_record_detail">{{item.region}}</view>
+      <view class="code_box_record_detail">{{item.city}}</view>
+      <view class="code_box_record_detail">{{item.sales}}</view>
+    </view>
+  </view>
+  <view class="button" bindtap="getRecord" wx:if="{{!haveGetRecord}}">查询记录</view>
+  <view class="button_clear" bindtap="clearRecord" wx:if="{{haveGetRecord}}">清空</view>
+  <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>selectRecord>index.js“找到查询记录函数，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\selectRecord\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 17rpx;
+}
+
+.code_box_title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.code_box_record {
+  display: flex;
+}
+
+.code_box_record_title {
+  width: 33%;
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20rpx 0;
+}
+
+.code_box_record_detail {
+  width: 33%;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 20% auto 0 auto;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+
+.button_clear {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.line {
+  height: 1rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecord
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecord\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetRecord: false,
+    envId: '',
+    record: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+    wx.showLoading({
+      title: '',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'selectRecord'
+      }
+    }).then((resp) => {
+      this.setData({
+        record: resp.result.data
+      });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
+  },
+
+  sumRecord() {
+    wx.navigateTo({
+      url: `/pages/sumRecordResult/index?envId=${this.data.envId}`,
+    });
+  },
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecord\index.json
+{
+  "navigationBarTitleText": "聚合记录",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecord\index.wxml
+<view>
+  <view class="top_tip">常用数据库中的groupby操作，体验按地域聚合数据。</view>
+  <view class="box_text" wx:if="{{!record}}">数据将展示在这里</view>
+  <view  wx:if="{{record}}" class="code_box">
+    <view class="code_box_title">地区销量统计</view>
+    <view class="code_box_record">
+      <view class="code_box_record_title">地域</view>
+      <view class="code_box_record_title">城市</view>
+      <view class="code_box_record_title">销量</view>
+    </view>
+    <view class="line"></view>
+    <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
+      <view class="code_box_record_detail">{{item.region}}</view>
+      <view class="code_box_record_detail">{{item.city}}</view>
+      <view class="code_box_record_detail">{{item.sales}}</view>
+    </view>
+  </view>
+  <view class="button" bindtap="sumRecord">聚合记录</view>
+  <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>sumRecord>index.js“找到聚合记录函数，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecord\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 17rpx;
+}
+
+.code_box_title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.code_box_record {
+  display: flex;
+}
+
+.code_box_record_title {
+  width: 33%;
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20rpx 0;
+}
+
+.code_box_record_detail {
+  width: 33%;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+
+.button_clear {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.line {
+  height: 1rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecordResult
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecordResult\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetRecord: false,
+    envId: '',
+    record: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+    wx.showLoading({
+      title: '',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'sumRecord'
+      }
+    }).then((resp) => {
+      this.setData({
+        record: resp.result.list
+      });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
+  },
+
+  goBack() {
+   wx.navigateBack();
+  },
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecordResult\index.json
+{
+  "navigationBarTitleText": "聚合记录",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecordResult\index.wxml
+<view>
+  <view class="top_tip">常用数据库中的groupby操作，体验按地域聚合数据。</view>
+  <view class="box_text" wx:if="{{!record}}">数据将展示在这里</view>
+  <view  wx:if="{{record}}" class="code_box">
+    <view class="code_box_title">地区销量统计</view>
+    <view class="code_box_record">
+      <view class="code_box_record_title">地域</view>
+      <view class="code_box_record_title">销量</view>
+    </view>
+    <view class="line"></view>
+    <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
+      <view class="code_box_record_detail">{{item._id}}</view>
+      <view class="code_box_record_detail">{{item.sum}}</view>
+    </view>
+  </view>
+  <view class="button" bindtap="goBack">返回上一步</view>
+  <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>sumRecord>index.js“找到聚合记录函数，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\sumRecordResult\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 17rpx;
+}
+
+.code_box_title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.code_box_record {
+  display: flex;
+  justify-content: space-between;
+}
+
+.code_box_record_title {
+  width: 33%;
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20rpx 0;
+}
+
+.code_box_record_detail {
+  width: 33%;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.line {
+  height: 1rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecord
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecord\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetRecord: false,
+    envId: '',
+    record: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+  },
+
+  onShow() {
+    wx.showLoading({
+      title: '',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'selectRecord'
+      }
+    }).then((resp) => {
+      this.setData({
+        record: resp.result.data
+      });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
+  },
+
+  updateRecord() {
+    wx.navigateTo({
+      url: `/pages/updateRecordResult/index?envId=${this.data.envId}`,
+    });
+  },
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecord\index.json
+{
+  "navigationBarTitleText": "更新记录",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecord\index.wxml
+<view>
+  <view class="top_tip">体验更新字段记录能力，更新数据表中的销量数据。</view>
+  <view class="box_text" wx:if="{{!record}}">数据将展示在这里</view>
+  <view  wx:if="{{record}}" class="code_box">
+    <view class="code_box_title">地区销量统计</view>
+    <view class="code_box_record">
+      <view class="code_box_record_title">地域</view>
+      <view class="code_box_record_title">城市</view>
+      <view class="code_box_record_title">销量</view>
+    </view>
+    <view class="line"></view>
+    <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
+      <view class="code_box_record_detail">{{item.region}}</view>
+      <view class="code_box_record_detail">{{item.city}}</view>
+      <view class="code_box_record_detail">{{item.sales}}</view>
+    </view>
+  </view>
+  <view class="button" bindtap="updateRecord">修改数据</view>
+  <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>updateRecord>index.js“找到查询记录函数，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecord\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 17rpx;
+}
+
+.code_box_title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.code_box_record {
+  display: flex;
+}
+
+.code_box_record_title {
+  width: 33%;
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20rpx 0;
+}
+
+.code_box_record_detail {
+  width: 33%;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+
+.button_clear {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.line {
+  height: 1rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordResult
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordResult\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetRecord: false,
+    envId: '',
+    record: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+    wx.showLoading({
+      title: '',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'selectRecord'
+      }
+    }).then((resp) => {
+      this.setData({
+        record: resp.result.data
+      });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
+  },
+
+  updateRecord() {
+    wx.showLoading({
+      title: '',
+    });
+    wx.cloud.callFunction({
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'updateRecord',
+        data: this.data.record
+      }
+    }).then((resp) => {
+      wx.navigateTo({
+        url: `/pages/updateRecordSuccess/index`,
+      });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
+  },
+
+  bindInput (e) {
+    const index = e.currentTarget.dataset.index;
+    const record = this.data.record;
+    record[index].sales = Number(e.detail.value);
+    this.setData({
+      record
+    });
+  },
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordResult\index.json
+{
+  "navigationBarTitleText": "更新记录",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordResult\index.wxml
+<view>
+  <view class="top_tip">体验更新字段记录能力，更新数据表中的销量数据。</view>
+  <view class="box_text" wx:if="{{!record}}">数据将展示在这里</view>
+  <view  wx:if="{{record}}" class="code_box">
+    <view class="code_box_title">地区销量统计</view>
+    <view class="code_box_record">
+      <view class="code_box_record_title">地域</view>
+      <view class="code_box_record_title">城市</view>
+      <view class="code_box_record_title">销量</view>
+    </view>
+    <view class="line"></view>
+    <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
+      <view class="code_box_record_detail">{{item.region}}</view>
+      <view class="code_box_record_detail">{{item.city}}</view>
+      <input class="code_box_record_detail" bindinput="bindInput" data-index="{{index}}" value="{{item.sales}}" type="number"></input>
+    </view>
+  </view>
+  <view class="button" bindtap="updateRecord">更新</view>
+  <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>updateRecord>index.js“找到查询记录函数，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordResult\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 17rpx;
+}
+
+.code_box_title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+}
+
+.code_box_record {
+  display: flex;
+}
+
+.code_box_record_title {
+  width: 33%;
+  font-size: 26rpx;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20rpx 0;
+}
+
+.code_box_record_detail {
+  width: 33%;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 250rpx auto 0 auto;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+
+.line {
+  height: 1rpx;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordSuccess
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordSuccess\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+
+  goBack() {
+    wx.navigateBack({
+      delta: 2
+    });
+  },
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordSuccess\index.json
+{
+  "navigationBarTitleText": "更新记录",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordSuccess\index.wxml
+<view>
+  <icon class="icon-box-img icon" type="success" size="53"></icon>
+  <view class="title">地区销量统计更新成功</view>
+  <view class="info">可在“云开发控制台>数据库>记录列表”中进行查看</view>
+  <view class="button" bindtap="goBack">我知道了</view>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\updateRecordSuccess\index.wxss
+page {
+  text-align: center;
+}
+
+.icon {
+  margin: 80rpx 0 50rpx 0;
+}
+
+.title {
+  font-size: 42rpx;
+  font-weight: 600;
+  margin-bottom: 30rpx;
+}
+
+.info {
+  font-size: 36rpx;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 550rpx auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\uploadFile
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\uploadFile\index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    showUploadTip: false,
+    haveGetImgSrc: false,
+    envId: '',
+    imgSrc: ''
+  },
+
+  onLoad(options) {
+    this.setData({
+      envId: options.envId
+    });
+  },
+
+  uploadImg() {
+    wx.showLoading({
+      title: '',
+    });
+    // 让用户选择一张图片
+    wx.chooseImage({
+      count: 1,
+      success: chooseResult => {
+        // 将图片上传至云存储空间
+        wx.cloud.uploadFile({
+          // 指定上传到的云路径
+          cloudPath: 'my-photo.png',
+          // 指定要上传的文件的小程序临时文件路径
+          filePath: chooseResult.tempFilePaths[0],
+          config: {
+            env: this.data.envId
+          }
+        }).then(res => {
+          console.log('上传成功', res);
+          this.setData({
+            haveGetImgSrc: true,
+            imgSrc: res.fileID
+          });
+          wx.hideLoading();
+        }).catch((e) => {
+          console.log(e);
+          wx.hideLoading();
+        });
+      },
+    });
+  },
+
+  clearImgSrc() {
+    this.setData({
+      haveGetImgSrc: false,
+      imgSrc: ''
+    });
+  }
+
+});
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\uploadFile\index.json
+{
+  "navigationBarTitleText": "上传文件",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\uploadFile\index.wxml
+<view>
+  <view class="top_tip">多存储类型，仅需一个云函数即可完成上传。</view>
+  <view class="box_text" wx:if="{{!imgSrc}}">上传的图片将展示在这里</view>
+  <view  wx:if="{{imgSrc}}" class="code_box">
+    <image class="code_img" src="{{imgSrc}}"></image>
+    <view class="img_info">
+      <view class="img_info_title">文件路径</view>
+      <view class="img_info_detail">{{imgSrc}}</view>
+    </view>
+  </view>
+  <view class="button" bindtap="uploadImg" wx:if="{{!haveGetImgSrc}}">上传一张图片</view>
+  <view class="button_clear" bindtap="clearImgSrc" wx:if="{{haveGetImgSrc}}">清空</view>
+  <view class="tip">在“资源管理器>miniprogram>pages>uploadFile>index.js”找到相应代码，体验该能力</view>
+  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+</view>
+
+
+D:/微信开发者工具 云开发 基础模版 资源配置\miniprogram\pages\uploadFile\index.wxss
+.tip {
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: center;
+  margin: 30rpx auto 0 auto;
+}
+
+.top_tip {
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  text-align: left;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.box_text {
+  background-color: white;
+  text-align: center;
+  padding: 300rpx 0;
+  margin-top: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.code_box {
+  text-align: center;
+  background-color: white;
+  margin-top: 30rpx;
+  padding: 50rpx 0 17px 0;
+}
+
+.code_img {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.button {
+  width: 300rpx;
+  text-align: center;
+  margin: 20% auto 0 auto;
+  height: 80rpx;
+  color: white;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: #07c160;
+}
+
+.button_clear {
+  width: 300rpx;
+  text-align: center;
+  margin: 20% auto 0 auto;
+  height: 80rpx;
+  color: #07c160;
+  border-radius: 5px;
+  line-height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.img_info {
+  padding-top: 16px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  padding: 16rpx 0;
+  border-top: 0.5px solid #E5E5E5;
+  margin-top: 50rpx;
+}
+
+.img_info_title {
+  font-size: 14;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #888888;
+  width: 72px;
+  margin-right: 32px;
+}
+
+.img_info_detail {
+  text-align: left;
+  font-size: 14;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  width: 500rpx;
+}
+
+
